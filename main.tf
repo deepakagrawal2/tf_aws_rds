@@ -40,6 +40,9 @@ resource "aws_db_instance" "main_rds_instance" {
 
     backup_retention_period = "${var.backup_retention_period}"
     backup_window = "${var.backup_window}"
+    tags {
+        "Name" = "Test"    
+    }
 }
 
 resource "aws_db_parameter_group" "main_rds_instance" {
